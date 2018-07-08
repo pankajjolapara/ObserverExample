@@ -22,8 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {//}, Observer {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {//}, Observer {
     private static final String TAG = "MainActivity";
     AppBase myBase;
     private int count=0;

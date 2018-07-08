@@ -63,13 +63,13 @@ public class FirstFragment extends Fragment implements Observer {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        txtCount=view.findViewById(R.id.txtCount);
+        txtCount = view.findViewById(R.id.txtCount);
         txtCount.setText(myBase.getObserver().getValue());
     }
 
     @Override
     public void update(Observable observable, Object o) {
-        Log.d(TAG, "update() called with: observable = [" + observable + "], o = [" + o + "] "+myBase.getObserver().getValue());
+        Log.d(TAG, "update() called with: observable = [" + observable + "], o = [" + o + "] " + myBase.getObserver().getValue());
         txtCount.setText(myBase.getObserver().getValue());
     }
 }

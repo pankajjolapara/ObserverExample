@@ -5,12 +5,14 @@ import java.util.Observable;
 public class ObservableData extends Observable {
     private String name = "First time i have this Text";
 
+
     /**
      * @return the value
      */
     public String getValue() {
         return name;
     }
+
 
     /**
      * @param name the value to set
@@ -23,7 +25,7 @@ public class ObservableData extends Observable {
 
     private static ObservableData mObservableData;
 
-    public static ObservableData getInstant(){
+    public static ObservableData getInstant() {
         if (mObservableData == null) {
             mObservableData = new ObservableData();
         }

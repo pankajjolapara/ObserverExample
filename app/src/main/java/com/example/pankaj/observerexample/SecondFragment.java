@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -24,6 +23,7 @@ public class SecondFragment extends Fragment implements Observer {
     private static final String TAG = "SecondFragment";
     private AppBase myBase;
     private TextView txtCount;
+
     SecondFragment() {
         // Required empty public constructor
     }
@@ -54,15 +54,17 @@ public class SecondFragment extends Fragment implements Observer {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        txtCount=view.findViewById(R.id.txtCount);
+        txtCount = view.findViewById(R.id.txtCount);
         txtCount.setText(myBase.getObserver().getValue());
     }
+
     @Override
     public void update(Observable observable, Object o) {
-        Log.d(TAG, "update() called with: observable = [" + observable + "], o = [" + o + "] "+myBase.getObserver().getValue());
+        Log.d(TAG, "update() called with: observable = [" + observable + "], o = [" + o + "] " + myBase.getObserver().getValue());
         txtCount.setText(myBase.getObserver().getValue());
     }
 }
